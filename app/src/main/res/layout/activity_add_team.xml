@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ededed"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:src="@drawable/ic_delete" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dp_30"
+        android:paddingBottom="@dimen/dp_30">
+
+        <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="@dimen/dp_64"
+            android:layout_height="@dimen/dp_64"
+            android:background="@color/color_ededed"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:textColor="@color/color_303030"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/tv_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textColor="@color/color_999999" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_50"
+        android:text="确认加入该群"
+        android:textColor="@color/color_303030"
+        android:textSize="@dimen/sp_18" />
+
+    <com.laka.androidlib.widget.SelectorButton
+        android:id="@+id/sb_sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_50"
+        android:gravity="center"
+        android:text="加入该群聊"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        app:bg_radius="@dimen/dp_5"
+        app:bga_color="@color/color_common_btn_main" />
+
+</LinearLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.laka.androidlib.widget.fontsize.AutoScaleImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_64"
+        android:src="@mipmap/icon_coin"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_18"
+        android:text="我的零钱"
+        android:textColor="#2D2D2D"
+        android:textSize="15sp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_20">
+
+        <TextView
+            android:id="@+id/tv_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:includeFontPadding="false"
+            android:text="¥"
+            android:textColor="#2D2D2D"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
+
+        <com.laka.androidlib.widget.text.RiseNumberTextView
+            android:id="@+id/tv_wallet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_toRightOf="@+id/tv_unit"
+            android:includeFontPadding="false"
+            android:text="0.00"
+            android:textColor="#2D2D2D"
+            android:textSize="55sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_wallet_manager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_40"
+        android:text="钱包管理"
+        android:padding="@dimen/dp_3"
+        android:drawablePadding="@dimen/dp_5"
+        android:drawableRight="@drawable/pay_icon_wallet_more"
+        android:textColor="#ffff9400"
+        android:textSize="@dimen/sp_14"/>
+
+    <com.laka.androidlib.widget.SelectorButton
+        android:id="@+id/btn_recharge"
+        android:layout_width="184dp"
+        android:layout_height="@dimen/dp_47"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="145dp"
+        android:gravity="center"
+        android:text="充值"
+        android:textColor="@color/white"
+        app:bg_radius="@dimen/dp_6"
+        app:bga_color="#07C160"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <com.laka.androidlib.widget.SelectorButton
+        android:id="@+id/btn_withdraw"
+        android:layout_width="184dp"
+        android:layout_height="@dimen/dp_47"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:text="提现"
+        android:textColor="#07C160"
+        app:bg_radius="@dimen/dp_6"
+        app:bga_color="#F4F4F4"
+        app:layout_constraintRight_toRightOf="parent"/>
+</LinearLayout>

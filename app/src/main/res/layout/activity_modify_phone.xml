@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ededed"
+    android:orientation="vertical">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_23"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15"
+        android:text="更换手机后，下次登录可使用新手机号登录。当前手机号："
+        android:textColor="#999999"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15"
+        android:paddingBottom="@dimen/dp_17"
+        android:text="18520210403"
+        android:textColor="#999999"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/et_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:background="@color/white"
+            android:hint="请填写手机号码"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:textColor="#C3C3C3"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <com.laka.androidlib.widget.SelectorButton
+        android:id="@+id/btn_sure"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_47"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_15"
+        android:gravity="center"
+        android:text="修改"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        app:bg_radius="@dimen/dp_6"
+        app:bga_color="#07C160" />
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/dp_16"
+    android:background="@drawable/bg_bottom_border"
+    android:paddingTop="@dimen/dp_20"
+    android:paddingRight="@dimen/dp_16"
+    android:paddingBottom="@dimen/dp_20">
+
+    <ImageView
+        android:id="@+id/iv_shop"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_shop_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="简约现代创意五金客厅台灯艺术玻璃床头LED卧室设计师样板房台灯"
+        android:textColor="#303030"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toRightOf="@+id/iv_shop"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_pay_time"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="付款时间：2019.05.13 14:30:24"
+        android:textColor="#AAAAAA"
+        android:textSize="11sp"
+        app:layout_constraintLeft_toRightOf="@+id/iv_shop"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shop_name" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="实付"
+        android:textColor="#525252"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_shop"
+        app:layout_constraintLeft_toRightOf="@+id/iv_shop"
+        app:layout_constraintTop_toTopOf="@+id/tv_order_price" />
+
+    <TextView
+        android:id="@+id/tv_order_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="¥48"
+        android:textColor="#E51C23"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_shop"
+        app:layout_constraintLeft_toRightOf="@+id/tv1" />
+
+    <com.laka.androidlib.widget.SelectorButton
+        android:id="@+id/btn_use"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_30"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="去使用"
+        android:textColor="@color/white"
+        app:bg_radius="@dimen/dp_6"
+        app:bga_color="#07C160"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_shop"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

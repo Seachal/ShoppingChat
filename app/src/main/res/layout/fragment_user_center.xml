@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ededed">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--  头部  -->
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_head"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                android:paddingHorizontal="@dimen/dp_18"
+                app:layout_constraintDimensionRatio="375:164"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_user_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias=".72">
+
+                    <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+                        android:id="@+id/iv_head_portrait"
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="@dimen/dp_60"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/default_img"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:riv_corner_radius="@dimen/dp_5"/>
+
+                    <TextView
+                        android:id="@+id/tv_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/color_2d2d2d"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toRightOf="@+id/iv_head_portrait"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <com.laka.androidlib.widget.fontsize.AutoScaleImageView
+                        android:layout_width="@dimen/dp_12"
+                        android:layout_height="@dimen/dp_12"
+                        android:layout_marginRight="@dimen/dp_18"
+                        android:src="@drawable/default_icon_qrcode"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_info_more"
+                        app:layout_constraintRight_toLeftOf="@+id/iv_info_more"
+                        app:layout_constraintTop_toTopOf="@+id/iv_info_more"/>
+
+                    <ImageView
+                        android:id="@+id/iv_info_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_5"
+                        android:paddingVertical="@dimen/dp_3"
+                        android:src="@drawable/ic_more"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"/>
+
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <com.netease.nim.uikit.business.session.utils.CommonDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.laka.shoppingchat.common.widget.PersonalNavigatiorBar
+            android:id="@+id/pnb_scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:is_show_right_arrow="true"
+            app:left_icon="@drawable/mine_icon_sao"
+            app:text_content="扫一扫"/>
+
+        <com.netease.nim.uikit.business.session.utils.CommonDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.laka.shoppingchat.common.widget.PersonalNavigatiorBar
+            android:id="@+id/pnb_wallet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:is_show_right_arrow="true"
+            app:left_icon="@drawable/mine_icon_wallet"
+            app:text_content="我的钱包"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/color_gray_d8d8d8"/>
+
+        <com.laka.shoppingchat.common.widget.PersonalNavigatiorBar
+            android:id="@+id/pnb_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:is_show_right_arrow="true"
+            app:left_icon="@drawable/mine_icon_order"
+            app:text_content="我的订单"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/color_gray_d8d8d8"
+            android:visibility="gone"/>
+
+        <com.laka.shoppingchat.common.widget.PersonalNavigatiorBar
+            android:id="@+id/pnb_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:is_show_right_arrow="true"
+            app:left_icon="@drawable/mine_icon_card"
+            app:text_content="我的银行卡"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/color_gray_d8d8d8"
+            android:visibility="gone"/>
+
+        <com.laka.shoppingchat.common.widget.PersonalNavigatiorBar
+            android:id="@+id/pnb_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:is_show_right_arrow="true"
+            app:left_icon="@drawable/mine_icon_pay"
+            app:text_content="支付密码"/>
+
+        <com.netease.nim.uikit.business.session.utils.CommonDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.laka.shoppingchat.common.widget.PersonalNavigatiorBar
+            android:id="@+id/nim_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:left_icon="@drawable/mine_icon_set"
+            app:text_content="设置"/>
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

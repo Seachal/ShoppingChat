@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ededed"
+    android:orientation="vertical">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:back_ground_color="@color/color_ededed"
+        app:title_text="投诉"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_6"
+        android:text="请选择投诉该账号的原因："
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_14"/>
+
+    <com.laka.shoppingchat.common.widget.PersonalNavigatiorBar
+        android:id="@+id/pnb_harass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:is_show_right_arrow="true"
+        app:text_content="发布不适当内容对我造成了骚扰"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_gray_d8d8d8"/>
+
+    <com.laka.shoppingchat.common.widget.PersonalNavigatiorBar
+        android:id="@+id/pnb_cheat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:is_show_right_arrow="true"
+        app:text_content="存在欺诈骗钱行为"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_gray_d8d8d8"/>
+
+    <com.laka.shoppingchat.common.widget.PersonalNavigatiorBar
+        android:id="@+id/pnb_theft"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:is_show_right_arrow="true"
+        app:text_content="此账号可能被盗用了"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_gray_d8d8d8"/>
+
+    <com.laka.shoppingchat.common.widget.PersonalNavigatiorBar
+        android:id="@+id/pnb_tort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:is_show_right_arrow="true"
+        app:text_content="存在侵权行为"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_gray_d8d8d8"/>
+
+    <com.laka.shoppingchat.common.widget.PersonalNavigatiorBar
+        android:id="@+id/pnb_counterfeit_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:is_show_right_arrow="true"
+        app:text_content="发布冒牌信息"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_gray_d8d8d8"/>
+
+    <com.laka.shoppingchat.common.widget.PersonalNavigatiorBar
+        android:id="@+id/pnb_counterfeit_others"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:is_show_right_arrow="true"
+        app:text_content="冒充他人"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_gray_d8d8d8"/>
+
+
+</LinearLayout>

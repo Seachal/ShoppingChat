@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_ededed"
+        android:orientation="vertical">
+
+        <com.laka.androidlib.widget.titlebar.TitleBarView
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_amount_limit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="-40dp"
+                android:background="#e6cc9b"
+                android:gravity="center"
+                android:text="单个红包金额不可超过200元"
+                android:textColor="@color/color_cd7346"
+                android:textSize="@dimen/sp_16"
+                android:visibility="gone" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- 备份 -->
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_amount_backup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_24"
+                    android:layout_marginTop="@dimen/dp_26"
+                    android:layout_marginRight="@dimen/dp_24"
+                    android:background="@drawable/bg_shape_input_white"
+                    android:clickable="false"
+                    android:paddingHorizontal="@dimen/dp_10"
+                    android:paddingVertical="@dimen/dp_16">
+
+                    <TextView
+                        android:id="@+id/tv_amount_txt_backup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="单个金额"
+                        android:textColor="@color/color_2d2d2d"
+                        android:textSize="@dimen/sp_17"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/et_amount_backup"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_8"
+                        android:background="@null"
+                        android:gravity="right"
+                        android:hint="0.00"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/color_2d2d2d"
+                        android:textColorHint="#b5b7c2"
+                        android:textSize="@dimen/sp_17"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_amount_txt_backup"
+                        app:layout_constraintRight_toLeftOf="@+id/tv_amount_yuan_backup"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_amount_yuan_backup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="元"
+                        android:textColor="@color/color_2d2d2d"
+                        android:textSize="@dimen/sp_17"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/cl_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_24"
+                    android:layout_marginTop="@dimen/dp_26"
+                    android:layout_marginRight="@dimen/dp_24"
+                    android:background="@drawable/bg_shape_input_white"
+                    android:clickable="true"
+                    android:paddingHorizontal="@dimen/dp_10"
+                    android:paddingVertical="@dimen/dp_16">
+
+                    <TextView
+                        android:id="@+id/tv_amount_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="金额"
+                        android:textColor="@color/color_2d2d2d"
+                        android:textSize="@dimen/sp_17"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/et_amount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_8"
+                        android:background="@null"
+                        android:gravity="right"
+                        android:hint="0.00"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/color_2d2d2d"
+                        android:textColorHint="#b5b7c2"
+                        android:textSize="@dimen/sp_17"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_amount_txt"
+                        app:layout_constraintRight_toLeftOf="@+id/tv_amount_yuan"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_amount_yuan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="元"
+                        android:textColor="@color/color_2d2d2d"
+                        android:textSize="@dimen/sp_17"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_radpackage_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_24"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:text="当前为拼手气红包"
+                    android:textColor="@color/color_7f7f7f"
+                    android:textSize="@dimen/sp_13" />
+
+                <TextView
+                    android:id="@+id/tv_redpackage_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:text="，改为普通红包"
+                    android:textColor="#cba563" />
+
+            </LinearLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_redpackage_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_18"
+                android:layout_marginRight="@dimen/dp_24"
+                android:background="@drawable/bg_shape_input_white"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingVertical="@dimen/dp_16">
+
+                <TextView
+                    android:id="@+id/tv_redpackage_number_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="红包个数"
+                    android:textColor="@color/color_2d2d2d"
+                    android:textSize="@dimen/sp_17"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/et_redpackage_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:hint="0"
+                    android:inputType="number"
+                    android:textColor="@color/color_2d2d2d"
+                    android:textColorHint="#B5B7C2"
+                    android:textSize="@dimen/sp_17"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_redpackage_number_txt"
+                    app:layout_constraintRight_toLeftOf="@+id/tv_number_txt"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_number_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="个"
+                    android:textColor="@color/color_2d2d2d"
+                    android:textSize="@dimen/sp_17"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_group_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_24"
+                android:textColor="@color/color_7f7f7f"
+                android:textSize="@dimen/sp_13" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_des"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_18"
+                android:layout_marginRight="@dimen/dp_24"
+                android:background="@drawable/bg_shape_input_white"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:paddingVertical="@dimen/dp_16">
+
+                <EditText
+                    android:id="@+id/et_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:background="@null"
+                    android:hint="恭喜发财，大吉大利"
+                    android:maxLength="30"
+                    android:textColor="@color/color_2d2d2d"
+                    android:textColorHint="#ffb5b7c2"
+                    android:textSize="@dimen/sp_17"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/selector_hb_btn_emoji"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_amount2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dp_32"
+                android:paddingRight="@dimen/dp_32">
+
+                <TextView
+                    android:id="@+id/tv_yuan_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_7"
+                    android:text="¥"
+                    android:textColor="@color/color_2d2d2d"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tv_yuan_icon"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="0.00"
+                    android:textColor="@color/color_2d2d2d"
+                    android:textSize="45sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <com.laka.androidlib.widget.SelectorButton
+                android:id="@+id/sb_sure"
+                android:layout_width="@dimen/dp_180"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_30"
+                android:enabled="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_17"
+                app:bg_radius="@dimen/dp_5"
+                app:bga_color="@color/color_ea5f39" />
+
+            <TextView
+                android:id="@+id/tv_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="钱包余额：¥0.00"
+                android:textColor="@color/color_7f7f7f"
+                android:textSize="@dimen/sp_14" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.netease.nim.uikit.business.session.weight.PayPsdView
+        android:id="@+id/pay_psd_input"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</FrameLayout>

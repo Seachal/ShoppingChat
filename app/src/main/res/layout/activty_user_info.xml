@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#EDEDED"
+              android:orientation="vertical">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="30dp">
+
+        <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+            android:id="@+id/iv_user_avatar"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginLeft="@dimen/dp_18"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text=""
+            android:textColor="@color/color_2d2d2d"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@+id/iv_user_avatar"
+            app:layout_constraintTop_toTopOf="@+id/iv_user_avatar"/>
+
+        <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+            android:id="@+id/iv_user_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:src="@mipmap/default_icon_female"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_user_name"
+            app:layout_constraintLeft_toRightOf="@+id/tv_user_name"
+            app:layout_constraintTop_toTopOf="@+id/tv_user_name"/>
+
+        <TextView
+            android:id="@+id/tv_nickname_backup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_2"
+            android:textColor="@color/color_font"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_user_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_name"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="@dimen/dp_15"
+        android:layout_height="1dp"
+        android:background="@color/white"/>
+
+    <LinearLayout
+        android:id="@+id/ll_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_common_white"
+        android:clickable="true"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="添加到通讯录"
+            android:textColor="#576B95"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_reject"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/dp_1"
+        android:background="@drawable/btn_common_white"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="拒绝"
+        android:textColor="#F37E7D"
+        android:textStyle="bold"
+        android:visibility="gone"/>
+
+    <com.netease.nim.uikit.business.session.utils.CommonDivider
+        android:id="@+id/view_divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tv_remove"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_common_white"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="删除好友"
+        android:textColor="#EA5F39"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/view_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_gray_d8d8d8"/>
+
+</LinearLayout>

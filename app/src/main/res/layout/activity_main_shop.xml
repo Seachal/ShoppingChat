@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 页面主布局 -->
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_common_bg">
+
+        <com.laka.shoppingchat.common.widget.refresh.FrogRefreshRecyclerView
+            android:id="@+id/rv_list"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            app:layout_constraintBottom_toTopOf="@+id/ll_bottom"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/iv_to_top"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginRight="@dimen/dp_30"
+            android:layout_marginBottom="@dimen/dp_50"
+            android:background="@drawable/selector_to_top"
+            app:layout_constraintBottom_toTopOf="@+id/ll_bottom"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/ll_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <include layout="@layout/tmall_h5detail_bottom_coupon"/>
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <!-- 自定義title bar -->
+    <com.laka.shoppingchat.mvp.shop.weight.ProductDetailSwitchTitleTabView
+        android:id="@+id/tab_type_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</android.support.constraint.ConstraintLayout>

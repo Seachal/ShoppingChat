@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title_text="设置字体大小"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/color_ededed">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+
+            <RelativeLayout
+                android:id="@+id/ll_font_size_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:padding="@dimen/space_line2">
+
+                <TextView
+                    android:id="@+id/tv_font_size1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/space_line"
+                    android:layout_toLeftOf="@+id/iv_font_size"
+                    android:background="@drawable/nim_message_right_blue_bg"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/space_line2"
+                    android:text="预览字体大小"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_stander"/>
+
+                <ImageView
+                    android:id="@+id/iv_font_size"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/nim_avatar_default"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_font_size_1"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:orientation="horizontal"
+                android:padding="@dimen/space_line2">
+
+                <ImageView
+                    android:id="@+id/iv_head_middle"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/ic_launcher"/>
+
+                <TextView
+                    android:id="@+id/tv_font_size2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_line"
+                    android:background="@drawable/nim_message_left_white_bg"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/space_line2"
+                    android:text="拖动下面的滑块，可设置字体大小"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_stander"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_font_size_1"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="50dp"
+                android:orientation="horizontal"
+                android:padding="@dimen/space_line2">
+
+                <ImageView
+                    android:id="@+id/iv_head_last"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/ic_launcher"/>
+
+                <TextView
+                    android:id="@+id/tv_font_size3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_line"
+                    android:background="@drawable/nim_message_left_white_bg"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/space_line2"
+                    android:text="设置后，会改变聊天、菜单和朋友圈中的字体大小。如果在使用过程中存在问题或意见，可反馈给购聊团队。"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_stander"
+                />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.laka.shoppingchat.common.widget.FontSizeView
+        android:id="@+id/fsvFontSize"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_marginLeft="@dimen/space_line2"
+        android:layout_marginRight="@dimen/space_line2"
+        android:background="@color/white"
+        app:circleRadius="11dp"
+        app:lineColor="@color/color_7f7f7f"
+        app:standerSize="16"
+        app:totalCount="5"/>
+</LinearLayout>

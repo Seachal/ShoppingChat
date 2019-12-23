@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:id="@+id/llRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_ededed"
+        android:orientation="vertical">
+
+        <com.laka.androidlib.widget.titlebar.TitleBarView
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingTop="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_15"
+            android:paddingBottom="@dimen/dp_20">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="充值金额"
+                android:textColor="#2D2D2D"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/etRecharge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="right"
+                android:hint="输入充值金额"
+                android:inputType="numberDecimal"
+                android:textColor="#2D2D2D"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="元"
+                android:textColor="#2D2D2D"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_wallet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingTop="@dimen/dp_12"
+            android:text="当前余额："
+            android:textColor="#999999"
+            android:textSize="13sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rlPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingTop="@dimen/dp_15"/>
+
+        <com.laka.androidlib.widget.SelectorButton
+            android:id="@+id/btn_withdraw"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_47"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginTop="27dp"
+            android:layout_marginRight="@dimen/dp_15"
+            android:gravity="center"
+            android:text="充值"
+            android:textColor="@color/white"
+            app:bg_radius="@dimen/dp_6"
+            app:bga_color="#07C160"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_11"
+            android:text="《银行卡必读，避免扣款不到账》"
+            android:textColor="#07C160"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_30"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15"
+            android:text="充值说明：\n
+1、充值成功后，金额最迟会在2小时内到账至钱包；\n
+2、请确保银行卡余额充足再发起充值，否则可能无法到账！\n
+3、如出现扣款，余额却未到账，系统会在下一工作日内核查\n
+并不但到钱包。"
+            android:textColor="#999999"
+            android:textSize="13sp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <!--  支付窗口  -->
+    <!--<com.netease.nim.uikit.business.session.weight.PayPsdView-->
+    <!--android:id="@+id/pay_psd_input"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:visibility="gone" />-->
+
+</FrameLayout>

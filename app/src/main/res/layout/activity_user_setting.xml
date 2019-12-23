@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_ededed"
+              android:orientation="vertical">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/ll_update_head_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_common_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_4"
+        android:paddingBottom="@dimen/dp_4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="头像"
+            android:textColor="#2D2D2D"
+            android:textSize="15sp"/>
+
+        <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="@dimen/dp_58"
+            android:layout_height="@dimen/dp_58"
+            android:layout_marginRight="@dimen/dp_10"/>
+
+        <ImageView
+            android:id="@+id/iv_more_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_15"
+            android:src="@mipmap/list_btn_more_n"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="@dimen/dp_15"
+        android:layout_height="1dp"
+        android:background="@color/white"/>
+
+    <LinearLayout
+        android:id="@+id/ll_update_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_58"
+        android:background="@drawable/btn_common_white"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_weight="1"
+            android:text="昵称"
+            android:textColor="#2D2D2D"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_10"
+            android:maxLines="1"
+            android:textColor="#A1A1A1"
+            android:textSize="15sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_15"
+            android:src="@mipmap/list_btn_more_n"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="@dimen/dp_15"
+        android:layout_height="1dp"
+        android:background="@color/white"/>
+
+    <LinearLayout
+        android:id="@+id/ll_update_sex"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_58"
+        android:background="@drawable/btn_common_white"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_weight="1"
+            android:text="性别"
+            android:textColor="#2D2D2D"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/tv_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_10"
+            android:maxLines="1"
+            android:textColor="#A1A1A1"
+            android:textSize="15sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_15"
+            android:src="@mipmap/list_btn_more_n"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="@dimen/dp_15"
+        android:layout_height="1dp"
+        android:background="@color/white"/>
+
+    <LinearLayout
+        android:id="@+id/ll_qr_code"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_58"
+        android:background="@drawable/btn_common_white"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_weight="1"
+            android:text="二维码名片"
+            android:textColor="#2D2D2D"
+            android:textSize="15sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:src="@drawable/default_icon_qrcode"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_15"
+            android:src="@mipmap/list_btn_more_n"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="@dimen/dp_15"
+        android:layout_height="1dp"
+        android:background="@color/white"/>
+
+    <LinearLayout
+        android:id="@+id/ll_update_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_58"
+        android:background="@drawable/btn_common_white"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_weight="1"
+            android:text="手机号"
+            android:textColor="#2D2D2D"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/tv_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_10"
+            android:maxLines="1"
+            android:textColor="#A1A1A1"
+            android:textSize="15sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_15"
+            android:src="@mipmap/list_btn_more_n"/>
+    </LinearLayout>
+
+</LinearLayout>

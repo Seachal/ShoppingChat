@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/messages_fragment"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@drawable/skin_global_bg"
+              android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_title_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EDEDED">
+
+        <com.laka.androidlib.widget.titlebar.TitleBarView
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EDEDED"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:title_text="购聊"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EDEDED"
+        android:gravity="center"
+        android:paddingLeft="17dp"
+        android:paddingTop="10dp"
+        android:paddingRight="17dp"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:id="@+id/llSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_session_search"
+            android:gravity="center"
+            android:minHeight="36dp"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5">
+
+            <com.laka.androidlib.widget.fontsize.AutoScaleImageView
+                android:layout_width="@dimen/dp_18"
+                android:layout_height="@dimen/dp_18"
+                android:src="@drawable/search_btn_n"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_6"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:text="搜索"
+                android:textColor="#A1A1A1"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--    <include layout="@layout/network_status_bar" />-->
+
+    <FrameLayout
+        android:id="@+id/flsContraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

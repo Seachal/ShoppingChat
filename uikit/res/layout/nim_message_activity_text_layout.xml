@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textMessageLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F9F9F9"
+    android:paddingTop="@dimen/bottom_component_margin_vertical"
+    android:paddingBottom="@dimen/bottom_component_margin_vertical">
+
+    <!--  语音切换  -->
+    <FrameLayout
+        android:id="@+id/switchLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/buttonAudioMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/seletor_wechat_btn_voice" />
+
+        <ImageView
+            android:id="@+id/buttonTextMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/seletor_icon_keyboard" />
+
+    </FrameLayout>
+
+    <!--  按住说话  -->
+    <FrameLayout
+        android:id="@+id/audioTextSwitchLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextMessage"
+        app:layout_constraintLeft_toRightOf="@+id/switchLayout"
+        app:layout_constraintRight_toLeftOf="@+id/emoji_button"
+        app:layout_constraintTop_toTopOf="@+id/editTextMessage">
+
+        <Button
+            android:id="@+id/audioRecord"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_wechat_input_bg_white"
+            android:text="@string/record_audio"
+            android:textColor="@color/color_black_333333"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+    <!--  文本输入框  -->
+    <EditText
+        android:id="@+id/editTextMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:autoLink="web|email|phone"
+        android:background="@drawable/shape_wechat_input_bg_white"
+        android:maxHeight="72dp"
+        android:maxLines="4"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_6"
+        android:paddingRight="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_6"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@null"
+        android:textSize="16sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/switchLayout"
+        app:layout_constraintRight_toLeftOf="@+id/emoji_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/emoji_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_10"
+        android:background="@drawable/selector_wechat_btn_face"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/sendLayout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--  发送  -->
+    <FrameLayout
+        android:id="@+id/sendLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/buttonMoreFuntionInText"
+            android:layout_width="@dimen/dp_22"
+            android:layout_height="@dimen/dp_25"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_3"
+            android:layout_marginRight="@dimen/dp_3"
+            android:background="@drawable/chat_btn_hb"
+            android:contentDescription="@string/empty" />
+
+        <TextView
+            android:id="@+id/buttonSendMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_session_btn_send"
+            android:contentDescription="@string/empty"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_3"
+            android:paddingRight="@dimen/dp_8"
+            android:paddingBottom="@dimen/dp_3"
+            android:text="@string/send"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>

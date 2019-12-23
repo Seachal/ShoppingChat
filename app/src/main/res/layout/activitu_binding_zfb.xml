@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_ededed"
+              android:orientation="vertical">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF0D2"
+        android:drawableLeft="@mipmap/icon_th_o"
+        android:drawablePadding="@dimen/dp_5"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_12"
+        android:paddingRight="@dimen/dp_15"
+        android:paddingBottom="@dimen/dp_12"
+        android:text="温馨提示：请铁血支付宝真实姓名，才可以正常体现哦！"
+        android:textColor="#F68108"
+        android:textSize="12sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:hint="请输入支付宝账号"
+        android:maxLength="1"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_15"
+        android:paddingBottom="@dimen/dp_20"
+        android:textColorHint="#C3C3C3"
+        android:textSize="15sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:hint="请输入真实姓名"
+        android:maxLength="1"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_15"
+        android:paddingBottom="@dimen/dp_20"
+        android:textColorHint="#C3C3C3"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/icon_th_r"
+        android:drawablePadding="@dimen/dp_5"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingTop="@dimen/dp_12"
+        android:paddingRight="@dimen/dp_15"
+        android:paddingBottom="@dimen/dp_12"
+        android:text="温馨提示：请铁血支付宝真实姓名，才可以正常体现哦！"
+        android:textColor="#E51C23"
+        android:textSize="12sp"/>
+
+    <com.laka.androidlib.widget.SelectorButton
+        android:id="@+id/btn_sure"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_47"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_55"
+        android:layout_marginRight="@dimen/dp_15"
+        android:gravity="center"
+        android:text="充值"
+        android:textColor="@color/white"
+        app:bg_radius="@dimen/dp_6"
+        app:bga_color="#07C160"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</LinearLayout>

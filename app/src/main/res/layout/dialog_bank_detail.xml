@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_unbind"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_58"
+        android:gravity="center"
+        android:text="解绑银行卡"
+        android:textColor="#EA5F39"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#EDEDED" />
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_58"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/color_2d2d2d"
+        android:textSize="16sp" />
+</LinearLayout>

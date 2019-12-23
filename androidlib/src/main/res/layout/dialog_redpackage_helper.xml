@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 图片选择对话框 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@drawable/bg_dialog_gray"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_photo_normal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="选择图片来源"
+            android:textColor="@color/color_font"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_redpackage_record"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_bg_take_phone"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="红包记录"
+            android:textColor="@color/color_2e2e2e"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/color_gray" />
+
+        <TextView
+            android:id="@+id/tv_helper_center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_bg_select_photo"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="帮助中心"
+            android:textColor="@color/color_2e2e2e"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- 取消 -->
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/selector_bg_take_phone"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="取消"
+        android:textColor="@color/color_2e2e2e"
+        android:textSize="16sp" />
+
+</LinearLayout>

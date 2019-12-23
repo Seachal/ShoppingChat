@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_common_bg">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    分类栏目、筛选栏目    -->
+        <LinearLayout
+            android:id="@+id/ll_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_category"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:background="@drawable/bg_shape_home_tab">
+
+                <net.lucode.hackware.magicindicator.MagicIndicator
+                    android:id="@+id/magic_indicator_collapsed"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_44"
+                    android:paddingBottom="3dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_tab"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_synthesis"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_home_tab_left"
+                    android:gravity="center">
+
+                    <com.laka.androidlib.widget.fontsize.FixedSizeTextView
+                        android:id="@+id/tv_synthesis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="综合"
+                        android:textColor="@color/color_ff4c0c"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/iv_synthesis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:src="@drawable/default_btn_sort_s1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center">
+
+                    <com.laka.androidlib.widget.fontsize.FixedSizeTextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="最新入库"
+                        android:textColor="@color/gray_88"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_sales"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center">
+
+                    <com.laka.androidlib.widget.fontsize.FixedSizeTextView
+                        android:id="@+id/tv_sales"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="销量"
+                        android:textColor="@color/gray_88"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/iv_sales"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:src="@drawable/default_btn_sort_n2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_price"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_home_tab_right"
+                    android:gravity="center">
+
+                    <com.laka.androidlib.widget.fontsize.FixedSizeTextView
+                        android:id="@+id/tv_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="价格"
+                        android:textColor="@color/gray_88"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/iv_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:src="@drawable/default_btn_sort_n2" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--页面主体内容 -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_top">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_shopping_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <FrameLayout
+                android:id="@+id/ll_select"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <View
+                    android:id="@+id/v_shadow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#66888888" />
+
+                <include layout="@layout/home_list_data_menu" />
+            </FrameLayout>
+
+        </FrameLayout>
+
+        <!--无网络页面 -->
+        <FrameLayout
+            android:id="@+id/layout_no_network"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_ededed"
+            android:visibility="gone">
+
+            <include
+                layout="@layout/layout_no_network"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <!-- 空数据 -->
+        <FrameLayout
+            android:id="@+id/layout_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_ededed"
+            android:visibility="gone">
+
+            <include
+                layout="@layout/layout_no_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ededed"
+    android:orientation="vertical">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title_text="资料设置"/>
+
+    <com.laka.shoppingchat.common.widget.PersonalNavigatiorBar
+        android:id="@+id/pnb_marks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:right_icon="@drawable/ic_more"
+        app:text_content="设置备注"/>
+
+    <com.netease.nim.uikit.business.session.utils.CommonDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_58"
+        android:background="@drawable/btn_common_white"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_16"
+        android:paddingRight="@dimen/dp_16">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="加入黑名单"
+            android:textColor="#2D2D2D"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/iv_loading_add_blacklist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_7"
+            android:src="@drawable/anim_list_loading_black"
+            android:visibility="gone" />
+
+        <ch.ielse.view.SwitchView
+            android:id="@+id/sv_add_blacklist"
+            android:layout_width="@dimen/dp_45"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_7" />
+
+    </LinearLayout>
+
+    <com.netease.nim.uikit.business.session.utils.CommonDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.laka.shoppingchat.common.widget.PersonalNavigatiorBar
+        android:id="@+id/pnb_complaint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:right_icon="@drawable/ic_more"
+        app:text_content="投诉"/>
+
+</LinearLayout>

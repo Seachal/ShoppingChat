@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:background="@drawable/btn_common_white"
+              android:clickable="true"
+              android:orientation="vertical">
+
+    <View
+        android:id="@+id/top_line"
+        style="@style/horizontal_light_thin_divider"
+        android:layout_marginLeft="76dip"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dip"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_10">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/portrait_panel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+                android:id="@+id/img_head"
+                android:layout_width="@dimen/avatar_size_default"
+                android:layout_height="@dimen/avatar_size_default"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/icon_photo_normal"/>
+
+            <com.laka.androidlib.widget.fontsize.AutoScaleTextView
+                android:id="@+id/tv_msg_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spot_circlt_ellipse_red"
+                android:gravity="center"
+                android:minWidth="@dimen/dp_15"
+                android:minHeight="@dimen/dp_15"
+                android:paddingLeft="@dimen/dp_3"
+                android:paddingRight="@dimen/dp_3"
+                android:text="99+"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:visibility="visible"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_3"
+            android:layout_marginRight="6dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:textColor="#2D2D2D"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toRightOf="@+id/portrait_panel"
+            app:layout_constraintTop_toTopOf="@+id/portrait_panel"
+            tools:text="名字"/>
+
+        <LinearLayout
+            android:id="@+id/content_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_nickname"
+            android:layout_marginRight="40dip"
+            android:layout_marginBottom="@dimen/dp_3"
+            android:layout_toRightOf="@id/portrait_panel"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/portrait_panel"
+            app:layout_constraintLeft_toRightOf="@+id/portrait_panel"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <ImageView
+                android:id="@+id/img_msg_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="6dp"
+                android:contentDescription="@string/empty"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/tv_draft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="[草稿] "
+                android:textColor="#8D3932"
+                android:textSize="14sp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_weight="1"
+                android:autoLink="none"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:lines="1"
+                android:scrollHorizontally="true"
+                android:textColor="#A1A1A1"
+                android:textSize="14sp"
+                tools:text="123"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="10dip"
+            android:textColor="#A1A1A1"
+            android:textSize="@dimen/text_size_12"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/portrait_panel"
+            tools:text="ssss "/>
+
+        <!--    免打扰icon    -->
+        <ImageView
+            android:id="@+id/iv_mute"
+            android:layout_width="@dimen/dp_14"
+            android:layout_height="@dimen/dp_14"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:src="@drawable/default_icon_silent"
+            app:layout_constraintBottom_toBottomOf="@+id/portrait_panel"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:id="@+id/bottom_line"
+        style="@style/horizontal_light_thin_divider"
+        android:layout_marginLeft="76dip"/>
+
+</LinearLayout>

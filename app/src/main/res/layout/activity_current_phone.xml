@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_ededed"
+    android:orientation="vertical">
+
+    <com.laka.androidlib.widget.titlebar.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_22"
+        android:src="@mipmap/img_phone" />
+    <TextView
+        android:id="@+id/tvPhone"
+        android:layout_marginTop="@dimen/dp_23"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <com.laka.androidlib.widget.SelectorButton
+        android:id="@+id/btn_change_phone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_47"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_25"
+        android:layout_marginRight="@dimen/dp_15"
+        android:gravity="center"
+        android:text="更换手机号"
+        android:textColor="@color/white"
+        app:bg_radius="@dimen/dp_6"
+        app:bga_color="#07C160" />
+</LinearLayout>

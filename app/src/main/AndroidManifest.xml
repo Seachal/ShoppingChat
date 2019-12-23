@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.laka.shoppingchat">
+
+    <!-- 连连SDK获取手机验证码所需权限，存在机型适配问题 -->
+    <!--<uses-permission android:name="android.permission.RECEIVE_SMS"/>-->
+    <!--<uses-permission android:name="android.permission.READ_SMS"/>-->
+    <!-- 阿里云OSS 权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- 用于开启 debug 版本的应用在 6.0 系统上的层叠窗口权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <!-- 极光认证权限 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!-- 8.0 系统上需要-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <!--极光推送-->
+    <permission
+        android:name="com.laka.shoppingchat.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="com.laka.shoppingchat.permission.JPUSH_MESSAGE"/>
+    <!-- SDK权限申明, 第三方APP接入时，请将com.netease.nim.demo替换为自己的包名 -->
+    <!-- 和下面的uses-permission一起加入到你的AndroidManifest文件中。 -->
+    <permission
+        android:name="com.laka.shoppingchat.permission.RECEIVE_MSG"
+        android:protectionLevel="signature"/>
+
+    <!--  推送 start  -->
+    <!-- 接受SDK消息广播权限， 第三方APP接入时，请将com.netease.nim.demo替换为自己的包名 -->
+    <uses-permission android:name="com.laka.shoppingchat.permission.RECEIVE_MSG"/>
+    <!-- 小米推送 -->
+    <permission
+        android:name="com.laka.shoppingchat.permission.MIPUSH_RECEIVE"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="com.laka.shoppingchat.permission.MIPUSH_RECEIVE"/>
+    <!--  华为推送  -->
+    <uses-sdk tools:overrideLibrary="com.huawei.android.hms.base,com.huawei.android.hms.push"/>
+
+    <!--魅族推送-->
+    <!-- 兼容flyme5.0以下版本，魅族内部集成pushSDK必填，不然无法收到消息-->
+    <uses-permission android:name="com.meizu.flyme.push.permission.RECEIVE"/>
+    <permission
+        android:name="com.laka.shoppingchat.push.permission.MESSAGE"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="com.laka.shoppingchat.push.permission.MESSAGE"/>
+    <!--  兼容flyme3.0配置权限-->
+    <uses-permission android:name="com.meizu.c2dm.permission.RECEIVE"/>
+    <permission
+        android:name="com.laka.shoppingchat.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="com.laka.shoppingchat.permission.C2D_MESSAGE"/>
+
+    <!--  oppo推送配置权限-->
+    <uses-permission android:name="com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE"/>
+    <!--  推送 end  -->
+
+    <application
+        android:name="com.laka.shoppingchat.mvp.base.MainApplication"
+        android:allowBackup="true"
+        android:authorities="com.laka.shoppingchat.fileprovider"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/net_security_config"
+        android:theme="@style/AppTheme"
+        tools:replace="allowBackup">
+
+        <!-- autoLayout 配置 -->
+        <meta-data
+            android:name="design_width"
+            android:value="720"/>
+        <meta-data
+            android:name="design_height"
+            android:value="1280"/>
+        <!-- APP key, 可以在这里设置，也可以在 SDKOptions 中提供。
+                   如果 SDKOptions 中提供了，取 SDKOptions 中的值。 -->
+        <!-- 测试 -->
+        <!--<meta-data-->
+        <!--android:name="com.netease.nim.appKey"-->
+        <!--android:value="9b21eb7cf801131330b949501bd1cb1e"/>-->
+        <!-- 正式 -->
+        <!--<meta-data-->
+        <!--android:name="com.netease.nim.appKey"-->
+        <!--android:value="21b1226f2f4e511dc9a43aa8d9ff0daf"/>-->
+
+        <!-- 云信后台服务，请使用独立进程。 -->
+        <service
+            android:name="com.netease.nimlib.service.NimService"
+            android:process=":core"/>
+
+        <!-- 云信后台辅助服务 -->
+        <service
+            android:name="com.netease.nimlib.service.NimService$Aux"
+            android:process=":core"/>
+
+        <!-- 云信后台辅助服务 -->
+        <service
+            android:name="com.netease.nimlib.job.NIMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:process=":core"/>
+
+        <!-- 云信监视系统启动和网络变化的广播接收器，保持和 NimService 同一进程 -->
+        <receiver
+            android:name="com.netease.nimlib.service.NimReceiver"
+            android:exported="false"
+            android:process=":core">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- 云信进程间通信 Receiver -->
+        <receiver android:name="com.netease.nimlib.service.ResponseReceiver"/>
+
+        <!-- 云信进程间通信service -->
+        <service android:name="com.netease.nimlib.service.ResponseService"/>
+
+        <!-- 云信进程间通信provider -->
+        <!-- android:authorities="{包名}.ipc.provider", 请将com.netease.nim.demo替换为自己的包名 -->
+        <provider
+            android:name="com.netease.nimlib.ipc.NIMContentProvider"
+            android:authorities="com.laka.shoppingchat.ipc.provider"
+            android:exported="false"
+            android:process=":core"/>
+        <!-- FileProvider分享类 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.laka.shoppingchat.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
+        <!-- 友盟统计 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5c3440d3f1f556f326001706"/>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="laka"/>
+
+        <!-- 异形屏幕适配 -->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.3"/>
+
+        <!-- 登录授权模块 -->
+        <activity
+            android:name="com.laka.shoppingchat.mvp.login.view.activity.PhoneInputActivity"
+            android:theme="@style/BaseAppTheme"/>
+        <activity
+            android:name="com.laka.shoppingchat.mvp.login.view.activity.VerifiyCodeInputActivity"
+            android:theme="@style/BaseAppTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <activity
+            android:name="com.laka.shoppingchat.mvp.login.view.activity.ScanQRCodeActivity"
+            android:theme="@style/BaseAppTheme"/>
+
+        <!-- 启动页 -->
+        <activity
+            android:name="com.laka.shoppingchat.mvp.launch.view.activity.LaunchActivity"
+            android:theme="@style/LaunchTheme">
+        </activity>
+
+        <activity
+            android:name="com.laka.shoppingchat.mvp.test.view.activity.TestActivity"
+            android:theme="@style/LaunchTheme">
+        </activity>
+
+        <activity
+            android:name="com.laka.shoppingchat.mvp.main.view.activity.X5WebActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:hardwareAccelerated="true"/>
+
+        <!-- 主页模块 -->
+        <activity android:name="com.laka.shoppingchat.mvp.main.view.activity.WebActivity"/>
+
+        <!-- 购物模块 -->
+        <activity android:name="com.laka.shoppingchat.mvp.shop.view.activity.ShopDetailActivity"
+                  android:theme="@style/AppDetailTheme"/>
+
+        <!-- 用户模块 -->
+        <activity android:name="com.laka.shoppingchat.mvp.user.view.activity.BindUnionCodeWebActivity"/>
+        <activity android:name="com.laka.shoppingchat.mvp.shop.view.activity.TaoBaoAuthorFailActivity"/>
+        <activity android:name="com.laka.shoppingchat.mvp.shop.view.activity.TaoBaoAuthorSuccessActivity"/>
+
+        <!-- 用户模块，用户资料设置 -->
+        <activity android:name="com.laka.shoppingchat.mvp.user.view.activity.VerifyCodeActivity"/>
+        <!-- 天猫超市、天猫国际、聚划算等页面 -->
+        <activity android:name="com.laka.shoppingchat.mvp.tmall.view.activity.TmallWebActivity"/>
+        <!-- 微信分享activity -->
+        <activity android:name="com.laka.shoppingchat.mvp.share.view.activity.ShopShareActivity"/>
+
+
+        <!-- since 2.0.0 optional 可选项，使用一键登录功能必须添加  -->
+        <!-- since 2.1.1 optional 可选项，通过screenOrientation设置授权页面横竖屏展示  -->
+        <activity
+            android:name="com.cmic.sso.sdk.activity.OAuthActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"/>
+        <!-- since 2.0.0 optional 可选项，使用一键登录功能必须添加  -->
+        <!-- since 2.1.1 optional 可选项，通过screenOrientation设置授权页面横竖屏展示  -->
+        <activity
+            android:name="com.cmic.sso.sdk.activity.LoginAuthActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Holo.NoActionBar"/>
+        <!-- since 2.0.0 optional 可选项，使用一键登录功能必须添加  -->
+        <!-- since 2.1.1 optional 可选项，通过screenOrientation设置授权页面横竖屏展示  -->
+        <activity
+            android:name="cn.jiguang.verifysdk.CtLoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Holo.NoActionBar"/>
+
+        <!-- 微信分享回调 -->
+        <activity
+            android:name="com.laka.shoppingchat.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity="com.laka.shoppingchat"/>
+        <activity android:name=".mvp.nim.activity.SystemMessageActivity"/>
+        <activity android:name=".mvp.nim.activity.AddFriendsActivity"/>
+        <activity android:name=".mvp.nim.activity.UserInfoActivity"/>
+        <activity android:name=".mvp.nim.activity.VerifyFriendActivity"/>
+        <activity android:name=".mvp.nim.activity.TeamListActivity"/>
+        <activity android:name=".mvp.nim.activity.GlobalSearchActivity"/>
+        <activity android:name=".mvp.nim.session.search.DisplayMessageActivity"/>
+        <activity android:name=".mvp.nim.activity.GlobalSearchDetailActivity2"/>
+        <activity android:name=".mvp.nim.session.activity.MessageInfoActivity"/>
+        <activity android:name=".mvp.wallet.view.activity.MyWalletActivity"/>
+        <activity android:name=".mvp.wallet.view.activity.MyBankCardActivity"/>
+        <activity android:name=".mvp.wallet.view.activity.MyPayPsdActivity"/>
+        <activity android:name=".mvp.wallet.view.activity.RechargeActivity"
+                  android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".mvp.wallet.view.activity.BindingZFBActivity"/>
+        <activity android:name=".mvp.user.view.activity.UserSettingActivity"/>
+        <activity android:name=".mvp.user.view.activity.CurrentPhoneActivity"/>
+        <activity android:name=".mvp.user.view.activity.ModifyNameActivity"/>
+        <activity android:name=".mvp.user.view.activity.ModifyPhoneActivity"/>
+        <activity android:name=".mvp.user.view.activity.ModifySexActivity"/>
+        <activity android:name=".mvp.user.view.activity.VerifyCodeActivity"/>
+        <activity android:name=".mvp.user.view.activity.OperationPayPsdActivity"/>
+        <activity android:name=".mvp.wallet.view.activity.RedPackageListActivity"
+                  android:launchMode="singleTask"/>
+        <activity android:name=".mvp.shop.view.activity.CouponBuyActivity"/>
+        <activity android:name=".mvp.shop.view.activity.CouponBuySuccessActivity"/>
+        <activity android:name=".mvp.chat.view.activity.ChatTeamQrCodeActivity"/>
+        <activity android:name=".mvp.chat.view.activity.AddTeamActivity"/>
+        <activity android:name=".mvp.user.view.activity.PrivacyPolicyActivity"/>
+        <activity android:name=".mvp.user.view.activity.SettingRemarksActivity"/>
+        <activity android:name=".mvp.user.view.activity.UserImInfoSettingActivity"/>
+        <activity android:name=".mvp.wallet.view.activity.ApplyWithdrawActivity"
+                  android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".mvp.user.view.activity.AboutUsActivity"/>
+        <activity android:name=".mvp.user.view.activity.ComplaintListActivity"/>
+        <activity android:name=".mvp.user.view.activity.ComplaintDetailActivity"/>
+        <!-- 导航页 -->
+        <activity
+            android:name=".mvp.launch.view.activity.WelcomeActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:hardwareAccelerated="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <!-- 主界面 -->
+        <activity
+            android:name=".mvp.main.view.activity.MainActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseAppTheme"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <!-- 配置淘宝返回路径 -->
+                <!--百川SDK appKey：28089259-->
+                <data
+                    android:host="m.laka.com"
+                    android:pathPrefix="/index.html"
+                    android:scheme="tbopen"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".mvp.order.view.activitity.MyOrderActivity"/>
+        <activity android:name=".mvp.wallet.view.activity.BankCardDetailActivity"/>
+        <activity android:name=".mvp.nim.activity.UserQRCodeActivity"/>
+        <!-- 极光推送 -->
+        <receiver
+            android:name="com.laka.shoppingchat.mvp.receiver.JPushReceiver"
+            android:enabled="true"
+            android:exported="false"
+            tools:node="replace">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE"/>
+                <action android:name="cn.jpush.android.intent.REGISTRATION"/>
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED"/>
+                <action android:name="cn.jpush.android.intent.CONNECTION"/>
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED"/>
+                <category android:name="com.laka.shoppingchat"/>
+            </intent-filter>
+        </receiver>
+
+
+        <!--Vivo推送配置项-->
+        <service
+            android:name="com.vivo.push.sdk.service.CommandClientService"
+            android:exported="true"/>
+        <activity
+            android:name="com.vivo.push.sdk.LinkProxyClientActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name=".mvp.nim.activity.GeneralActivity"/>
+        <activity android:name=".mvp.nim.activity.MessageSettingActivity"/>
+
+        <!--    vivo 推送 appkey    -->
+        <!--        <meta-data-->
+        <!--            android:name="com.vivo.push.api_key"-->
+        <!--            android:value="18374205-eb53-428c-bad2-7a75712f6487"/>-->
+        <!--        <meta-data-->
+        <!--            android:name="com.vivo.push.app_id"-->
+        <!--            android:value="11425"/>-->
+
+        <receiver android:name="com.netease.nimlib.mixpush.vivo.VivoPushReceiver">
+            <intent-filter>
+                <!-- 接收 push 消息 -->
+                <action android:name="com.vivo.pushclient.action.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+
+        <!--oppo推送配置项-->
+        <service
+            android:name="com.netease.nimlib.mixpush.oppo.OppoPushService"
+            android:permission="com.coloros.mcs.permission.SEND_MCS_MESSAGE">
+            <intent-filter>
+                <action android:name="com.coloros.mcs.action.RECEIVE_MCS_MESSAGE"/>
+            </intent-filter>
+        </service>
+
+        <!-- 连连SDK配置 -->
+        <!--<activity-->
+        <!--android:name="com.yintong.secure.activity.BaseActivity"-->
+        <!--android:configChanges="orientation|keyboardHidden|screenSize"-->
+        <!--android:theme="@android:style/Theme.Translucent.NoTitleBar"-->
+        <!--android:windowSoftInputMode="adjustResize">-->
+        <!--</activity>-->
+        <!--<service-->
+        <!--android:name="com.yintong.secure.service.PayService">-->
+        <!--</service>-->
+
+        <activity android:name=".mvp.nim.activity.NimSettingActivity"/>
+        <activity android:name=".mvp.nim.activity.PrivacyActivity"/>
+        <activity android:name=".mvp.nim.blacklist.activity.BlackListActivity"/>
+        <activity android:name=".mvp.nim.activity.FontSizeActivity"/>
+        <activity android:name=".mvp.wallet.view.activity.EmptyActivity" android:theme="@style/TransparentTheme"/>
+        <activity android:name=".mvp.wallet.view.activity.AddBankCardActivity"/>
+        <activity android:name=".mvp.user.view.activity.ForgetPayPsdActivity"/>
+
+        <receiver
+            android:name="com.netease.nim.uikit.business.session.receiver.CustomDeviceAdminReceiver"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin"/>
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest>

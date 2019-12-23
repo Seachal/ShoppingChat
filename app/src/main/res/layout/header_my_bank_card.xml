@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_66"
+        android:background="@drawable/bg_bank_card"
+        android:gravity="center"
+        android:text="+ 添加银行卡"
+        android:textColor="#07C160"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="友情提示：仅支持借记卡(储蓄卡)，不支持信用卡"
+        android:textColor="#999999"
+        android:textSize="13sp" />
+</LinearLayout>

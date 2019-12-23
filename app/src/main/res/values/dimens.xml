@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="dp_187">187dp</dimen>
+    <dimen name="dp_360">360dp</dimen>
+    <dimen name="dp_374">374dp</dimen>
+    <dimen name="dp_200">200dp</dimen>
+    <dimen name="dp_130">130dp</dimen>
+    <dimen name="dp_95">95dp</dimen>
+    <dimen name="dp_105">105dp</dimen>
+    <dimen name="dp_87">87dp</dimen>
+    <dimen name="dp_96">96dp</dimen>
+    <dimen name="dp_98">98dp</dimen>
+    <dimen name="dp_36">36dp</dimen>
+    <dimen name="dp_220">220dp</dimen>
+    <dimen name="dp_78">78dp</dimen>
+    <dimen name="dp_175">175dp</dimen>
+    <dimen name="dp_135">135dp</dimen>
+    <dimen name="dp_138">138dp</dimen>
+    <dimen name="dp_58">58dp</dimen>
+    <dimen name="sp_36">36sp</dimen>
+    <dimen name="dp_148">148dp</dimen>
+    <dimen name="dp_85">85dp</dimen>
+    <dimen name="dp_162">162dp</dimen>
+    <dimen name="dp_37">37dp</dimen>
+    <dimen name="dp_74">74dp</dimen>
+    <dimen name="dp_260">260dp</dimen>
+    <dimen name="space_line2">12dp</dimen>
+    <dimen name="space_line">6dp</dimen>
+    <!--字体大小 及倍数-->
+    <!--0.875=14/16 -->
+    <dimen name="sp_small">14sp</dimen>
+    <!--1  标准-->
+    <dimen name="sp_stander">16sp</dimen>
+    <!--1.125=18/16-->
+    <dimen name="sp_big1">17sp</dimen>
+    <!--1.25=20/16-->
+    <dimen name="sp_big2">18sp</dimen>
+    <!--1.375=22/16-->
+    <dimen name="sp_big3">19sp</dimen>
+    <!--1.5=24/16-->
+    <dimen name="sp_big4">20sp</dimen>
+    <!--1.625=26/16-->
+    <dimen name="sp_big5">26sp</dimen>
+    <!--1.75=28/16-->
+    <dimen name="sp_big6">28sp</dimen>
+</resources>

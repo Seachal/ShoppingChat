@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_user_info"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/dp_18"
+    android:paddingTop="@dimen/dp_18"
+    android:paddingRight="@dimen/dp_18">
+
+    <com.netease.nim.uikit.common.ui.imageview.HeadImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="@dimen/dp_45"
+        android:layout_height="@dimen/dp_45"
+        android:scaleType="centerCrop"
+        android:src="@drawable/meinv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius="@dimen/dp_4" />
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_10"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:maxLines="1"
+        android:text="女主饺"
+        android:textColor="@color/color_2d2d2d"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintLeft_toRightOf="@+id/iv_avatar"
+        app:layout_constraintRight_toLeftOf="@+id/tv_royalty_commission"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:maxLines="1"
+        android:text="08-20 17:00"
+        android:textColor="@color/color_a1a1a1"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+        app:layout_constraintLeft_toRightOf="@+id/iv_avatar"
+        app:layout_constraintRight_toLeftOf="@+id/tv_royalty_txt" />
+
+
+    <TextView
+        android:id="@+id/tv_royalty_commission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:maxLines="1"
+        android:text="0.01元"
+        android:textColor="@color/color_2d2d2d"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_royalty_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/hb_icon_best"
+        android:drawablePadding="@dimen/dp_3"
+        android:gravity="end"
+        android:maxLines="1"
+        android:text="手气最佳"
+        android:textColor="#ff982c"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginTop="@dimen/dp_18"
+        android:background="@color/color_theme_bg"
+        app:layout_constraintTop_toBottomOf="@+id/iv_avatar" />
+
+</android.support.constraint.ConstraintLayout>
